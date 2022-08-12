@@ -1,7 +1,7 @@
 import requests
 import json
 
-url_rc = "https://xyz"
+url_rc = "https://xyz" #without the slash at the end
 url_random_user = "https://randomuser.me/api/"
 
 department = "DEPARTMENT_NAME"
@@ -20,7 +20,7 @@ country = random_user["results"][0]["location"]["country"]
 gender = random_user["results"][0]["gender"]
 token = random_user["results"][0]["login"]["uuid"]
 email = random_user["results"][0]["email"]
-phone = random_user["results"][0]["email"]
+phone = random_user["results"][0]["phone"]
 
 url_visitor = url_rc + visitor_endpoint
 
