@@ -26,7 +26,7 @@ url_visitor = url_rc + visitor_endpoint
 
 payload = json.dumps({
   "visitor": {
-    "department": "GD",
+    "department": department,
     "name": name,
     "email": email,
     "token": token,
