@@ -1,78 +1,51 @@
 import requests
 import json
+import uuid
 
-url_rc = "https://xyz" #without the slash at the end
+token = str(uuid.uuid4())
+
+url_rc = "https://gabrield.rocket.chat" # without the slash at the end
+department = "GD"
+
 url_random_user = "https://randomuser.me/api/"
 
-department = "DEPARTMENT_NAME"
-
 visitor_endpoint = "/api/v1/livechat/visitor"
-agent_next_endpoint = "/api/v1/livechat/agent.next/"
 room_endpoint = "/api/v1/livechat/room"
+url_visitor = url_rc + visitor_endpoint
+url_room = url_rc + room_endpoint + "?token=" + token
 
-r = requests.get(url_random_user)
-random_user = r.json()
+###############################################################
+
+requests_random_user = requests.get(url_random_user)
+random_user = requests_random_user.json()
 
 name = (random_user["results"][0]["name"]["first"] + " " + random_user["results"][0]["name"]["last"])
-city = random_user["results"][0]["location"]["city"]
-state = random_user["results"][0]["location"]["state"]
-country = random_user["results"][0]["location"]["country"]
-gender = random_user["results"][0]["gender"]
-token = random_user["results"][0]["login"]["uuid"]
 email = random_user["results"][0]["email"]
 phone = random_user["results"][0]["phone"]
 
-url_visitor = url_rc + visitor_endpoint
+###############################################################
 
-payload = json.dumps({
+visitor_payload = json.dumps({
   "visitor": {
     "department": department,
     "name": name,
     "email": email,
     "token": token,
-    "phone": phone,
-    "customFields": [
-      {
-        "key": "City",
-        "value": city,
-        "overwrite": True
-      },
-      {
-        "key": "Country",
-        "value": country,
-        "overwrite": True
-      },
-      {
-        "key": "Gender",
-        "value": gender,
-        "overwrite": True
-      },
-      {
-        "key": "State",
-        "value": state,
-        "overwrite": True
-      }
-    ]
+    "phone": phone
   }
 })
 
-headers = {
+visitor_headers = {
   'Content-Type': 'application/json'
 }
 
-visitor_call = requests.post(url_visitor, headers = headers, data=payload)
+###############################################################
 
-#print(visitor_call.text)
+new_visitor = requests.post(url_visitor, headers = visitor_headers, data = visitor_payload)
 
-url_next_agent = url_rc + agent_next_endpoint + token
+#print(new_visitor.text)
 
-response = requests.get(url_next_agent)
-next_agent = response.json()
-next_agent.keys()
-#print(next_agent["agent"])
-agent_id = next_agent["agent"]["_id"]
+###############################################################
 
-url_room = url_rc + room_endpoint + "?token=" + token + "&agentId=" + agent_id
-#print(url_room)
 room = requests.get(url_room)
 print(room.json())
