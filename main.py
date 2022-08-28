@@ -3,8 +3,8 @@ import json
 import uuid
 import time
 
-url_rc = "ROCKET_CHAT_URL" # without the end slash
-department = "DEPARTMENT"
+url_rc = "ROCKET_CHAT_URL" # Without the end slash, example: https://chat.company.com
+department = "DEPARTMENT" # Department name
 
 ###############################################################
 
@@ -58,7 +58,7 @@ def open_room():
 ###############################################################
 
 
-count = 1 # How many rooms?
+count = 1 # How many rooms to open? 1s delay between each room.
 
 for i in range(count):
   open_room()
