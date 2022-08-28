@@ -4,8 +4,8 @@ import uuid
 
 token = str(uuid.uuid4())
 
-url_rc = "https://gabrield.rocket.chat" # without the slash at the end
-department = "GD"
+url_rc = "https://ROCKET_CHAT_SERVER" # without the slash at the end
+department = "DEPARTMENT_NAME"
 
 url_random_user = "https://randomuser.me/api/"
 
