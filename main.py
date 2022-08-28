@@ -54,7 +54,7 @@ def open_room():
   room = requests.get(url_room)
   print(room.json())
 
-count = 10 # How many rooms?
+count = 1 # How many rooms?
 
 for i in range(count):
   open_room()
