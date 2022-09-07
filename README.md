@@ -6,4 +6,4 @@ This Python script opens a room with visitor information from the public API htt
 
 Keep at least one livechat agent online.
 
-Libraries used: requests, json, uuid and time.
+External libraries used: requests.
