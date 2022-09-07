@@ -1,10 +1,6 @@
 import requests
-import uuid
 import json
 
-name = []
-email = []
-phone = []
 token = []
 
 def visitors(count: int, department: str, url_rc: str):
@@ -16,18 +12,17 @@ def visitors(count: int, department: str, url_rc: str):
   random_user = requests_random_user.json()
 
   for i in range(count):
-    name.append((random_user["results"][i]["name"]["first"] + " " + random_user["results"][i]["name"]["last"]))
-    email.append(random_user["results"][i]["email"])
-    phone.append(random_user["results"][i]["phone"])
-    token.append(str(uuid.uuid4()))
+    
+    full_name = random_user["results"][i]["name"]["first"] + " " + random_user["results"][i]["name"]["last"]
+    token.append(random_user["results"][i]["login"]["uuid"])
 
     visitor_payload = json.dumps({
       "visitor": {
         "department": department,
-        "name": name[i],
-        "email": email[i],
-        "token": token[i],
-        "phone": phone[i]
+        "name": full_name,
+        "email": random_user["results"][i]["email"],
+        "token": random_user["results"][i]["login"]["uuid"],
+        "phone": random_user["results"][i]["phone"]
       }
     })
 
@@ -37,6 +32,6 @@ def visitors(count: int, department: str, url_rc: str):
 
     new_visitor = requests.post(url_visitor, headers = visitor_headers, data = visitor_payload)
 
-    #print(new_visitor.text)
+    # print(new_visitor.text)
 
   return token
