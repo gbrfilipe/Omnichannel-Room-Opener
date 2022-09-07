@@ -1,11 +1,10 @@
+import visitors as v
 import room as r
 
-url_rc = "YOUR_SERVER_URL" # Without the end slash, example: https://chat.company.com
-department = "DEPARTMENT" # Department name
-
-###############################################################
+url_rc = "https://xyz.com" # Without the end slash, example: https://chat.domain.com
+department = "XYZ" # Department name
 
 count = 1 # How many rooms to open? 1s delay between each room.
 
-for i in range(count):
-  r.open_room(url_rc, department)
+v.visitors(count)
+r.open_room(url_rc, department, count, name = v.name, email = v.email, phone = v.phone, token = v.token)
