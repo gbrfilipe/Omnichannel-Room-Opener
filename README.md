@@ -1,6 +1,6 @@
 # Omnichannel Room Opener - Rocket.Chat
 
-### **BE CAREFUL, use with care to not overload your server with too many rooms.**
+### **BE CAREFUL, use responsibly to not overload your server with too many rooms.**
 
 This Python script can open at least 5k rooms with visitor information from the public API https://randomuser.me/.
 
