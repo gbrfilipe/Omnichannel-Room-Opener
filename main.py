@@ -6,5 +6,5 @@ department = "XYZ" # Department name
 
 count = 1 # How many rooms to open? 1s delay between each room.
 
-v.visitors(count)
-r.open_room(url_rc, department, count, name = v.name, email = v.email, phone = v.phone, token = v.token)
+v.visitors(count, department, url_rc)
+r.open_room(count, url_rc, token = v.token)
