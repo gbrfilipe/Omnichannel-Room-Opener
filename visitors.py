@@ -1,4 +1,4 @@
-import requests
+import requests as req
 import json
 
 token = []
@@ -8,8 +8,7 @@ def visitors(count: int, department: str, url_rc: str):
   url_random_user = "https://randomuser.me/api/?results=" + str(count)
   url_visitor = url_rc + "/api/v1/livechat/visitor"
 
-  requests_random_user = requests.get(url_random_user)
-  random_user = requests_random_user.json()
+  random_user = req.get(url_random_user).json()
 
   for i in range(count):
     
@@ -30,7 +29,7 @@ def visitors(count: int, department: str, url_rc: str):
       'Content-Type': 'application/json'
     }
 
-    new_visitor = requests.post(url_visitor, headers = visitor_headers, data = visitor_payload)
+    new_visitor = req.post(url_visitor, headers = visitor_headers, data = visitor_payload)
 
     # print(new_visitor.text)
 
