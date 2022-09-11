@@ -15,7 +15,7 @@ def visitors(count: int, department: str, url_rc: str):
     full_name = random_user["results"][i]["name"]["first"] + " " + random_user["results"][i]["name"]["last"]
     token.append(random_user["results"][i]["login"]["uuid"])
 
-    visitor_payload = json.dumps({
+    new_visitor_payload = json.dumps({
       "visitor": {
         "department": department,
         "name": full_name,
@@ -25,11 +25,11 @@ def visitors(count: int, department: str, url_rc: str):
       }
     })
 
-    visitor_headers = {
+    new_visitor_headers = {
       'Content-Type': 'application/json'
     }
 
-    new_visitor = req.post(url_visitor, headers = visitor_headers, data = visitor_payload)
+    new_visitor = req.post(url_visitor, headers = new_visitor_headers, data = new_visitor_payload)
 
     # print(new_visitor.text)
 
