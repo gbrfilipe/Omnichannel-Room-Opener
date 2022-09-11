@@ -15,4 +15,5 @@ APIs Documentation:
 - Random User: https://randomuser.me/documentation
 - Rocket.Chat Room: https://developer.rocket.chat/reference/api/rest-api/endpoints/omnichannel/livechat-endpoints/livechat-room/livechat-room-info 
 - Rocket.Chat Visitor: https://developer.rocket.chat/reference/api/rest-api/endpoints/omnichannel/livechat-endpoints/visitor/register-a-new-livechat-visitor
+
 PS: The department information must be in the visitor's payload, otherwise the room will not be allocated to any department.
