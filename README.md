@@ -7,6 +7,7 @@
 Keep at least one livechat agent online.
 
 External libraries: requests and faker.
+
 Install the liraries using **pip install requests** and **pip install faker** in your cmd. 
 
 APIs Documentation: 
