@@ -4,9 +4,9 @@ This script opens an omnichannel room and sends a message.
 
 ### **BE CAREFUL, use responsibly to not overload your server with too many rooms.**
 
-*Change the **url_rc**, **department** and **count** variables at **main** file.*
+Change the **url_rc**, **department** and **count** variables at **main** file.
 
-Have at least one online agent.
+Have at least one omnichannel online agent.
 
 External libraries: requests and faker.
 
