@@ -1,4 +1,4 @@
-# Omnichannel Room Opener - Rocket.Chat
+# 🚀 Rocket.Chat - Omnichannel Room Opener
 
 This script opens an omnichannel room and sends a message, perfect for mass testing omnichannel behaviors and bot integrations.
 
