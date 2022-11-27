@@ -1,10 +1,10 @@
 # Omnichannel Room Opener - Rocket.Chat
 
-This script opens an omnichannel room and sends a message. 
+This script opens an omnichannel room and sends a message, perfect for mass testing omnichannel behaviors and bot integrations.
 
 ### **BE CAREFUL, use responsibly to not overload your server with too many rooms.**
 
-Change the **url_rc**, **department** and **count** variables at **main** file.
+Change the [**url_rc**](https://github.com/gbrfilipe/Omnichannel-Room-Opener-Rocket.Chat/blob/00216d6103863371568684278aa6a0a2ba049891/main.py#L4)  , [**department**](https://github.com/gbrfilipe/Omnichannel-Room-Opener-Rocket.Chat/blob/00216d6103863371568684278aa6a0a2ba049891/main.py#L5) and [**count**](https://github.com/gbrfilipe/Omnichannel-Room-Opener-Rocket.Chat/blob/00216d6103863371568684278aa6a0a2ba049891/main.py#L7) variables at [**main**](https://github.com/gbrfilipe/Omnichannel-Room-Opener-Rocket.Chat/blob/main/main.py) file.
 
 Have at least one omnichannel online agent.
 
